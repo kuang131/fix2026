@@ -1,0 +1,626 @@
+{
+    "MEXICO VS SOUTH AFRICA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-11",
+        "hora": "13:00 UTC-6"
+    },
+    "SOUTH KOREA VS CZECH REPUBLIC": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-11",
+        "hora": "20:00 UTC-6"
+    },
+    "CZECH REPUBLIC VS SOUTH AFRICA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-18",
+        "hora": "12:00 UTC-4"
+    },
+    "MEXICO VS SOUTH KOREA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-18",
+        "hora": "19:00 UTC-6"
+    },
+    "CZECH REPUBLIC VS MEXICO": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-24",
+        "hora": "19:00 UTC-6"
+    },
+    "SOUTH AFRICA VS SOUTH KOREA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-24",
+        "hora": "19:00 UTC-6"
+    },
+    "CANADA VS BOSNIA & HERZEGOVINA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-12",
+        "hora": "15:00 UTC-4"
+    },
+    "QATAR VS SWITZERLAND": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-13",
+        "hora": "12:00 UTC-7"
+    },
+    "SWITZERLAND VS BOSNIA & HERZEGOVINA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-18",
+        "hora": "12:00 UTC-7"
+    },
+    "CANADA VS QATAR": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-18",
+        "hora": "15:00 UTC-7"
+    },
+    "SWITZERLAND VS CANADA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-24",
+        "hora": "12:00 UTC-7"
+    },
+    "BOSNIA & HERZEGOVINA VS QATAR": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-24",
+        "hora": "12:00 UTC-7"
+    },
+    "BRAZIL VS MOROCCO": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-13",
+        "hora": "18:00 UTC-4"
+    },
+    "HAITI VS SCOTLAND": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-13",
+        "hora": "21:00 UTC-4"
+    },
+    "SCOTLAND VS MOROCCO": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-19",
+        "hora": "18:00 UTC-4"
+    },
+    "BRAZIL VS HAITI": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-19",
+        "hora": "20:30 UTC-4"
+    },
+    "SCOTLAND VS BRAZIL": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-24",
+        "hora": "18:00 UTC-4"
+    },
+    "MOROCCO VS HAITI": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-24",
+        "hora": "18:00 UTC-4"
+    },
+    "USA VS PARAGUAY": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-12",
+        "hora": "18:00 UTC-7"
+    },
+    "AUSTRALIA VS TURKEY": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-13",
+        "hora": "21:00 UTC-7"
+    },
+    "USA VS AUSTRALIA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-19",
+        "hora": "12:00 UTC-7"
+    },
+    "TURKEY VS PARAGUAY": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-19",
+        "hora": "20:00 UTC-7"
+    },
+    "TURKEY VS USA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-25",
+        "hora": "19:00 UTC-7"
+    },
+    "PARAGUAY VS AUSTRALIA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-25",
+        "hora": "19:00 UTC-7"
+    },
+    "GERMANY VS CURAÇAO": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-14",
+        "hora": "12:00 UTC-5"
+    },
+    "IVORY COAST VS ECUADOR": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-14",
+        "hora": "19:00 UTC-4"
+    },
+    "GERMANY VS IVORY COAST": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-20",
+        "hora": "16:00 UTC-4"
+    },
+    "ECUADOR VS CURAÇAO": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-20",
+        "hora": "19:00 UTC-5"
+    },
+    "CURAÇAO VS IVORY COAST": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-25",
+        "hora": "16:00 UTC-4"
+    },
+    "ECUADOR VS GERMANY": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-25",
+        "hora": "16:00 UTC-4"
+    },
+    "NETHERLANDS VS JAPAN": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-14",
+        "hora": "15:00 UTC-5"
+    },
+    "SWEDEN VS TUNISIA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-14",
+        "hora": "20:00 UTC-6"
+    },
+    "NETHERLANDS VS SWEDEN": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-20",
+        "hora": "12:00 UTC-5"
+    },
+    "TUNISIA VS JAPAN": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-20",
+        "hora": "22:00 UTC-6"
+    },
+    "JAPAN VS SWEDEN": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-25",
+        "hora": "18:00 UTC-5"
+    },
+    "TUNISIA VS NETHERLANDS": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-25",
+        "hora": "18:00 UTC-5"
+    },
+    "BELGIUM VS EGYPT": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-15",
+        "hora": "12:00 UTC-7"
+    },
+    "IRAN VS NEW ZEALAND": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-15",
+        "hora": "18:00 UTC-7"
+    },
+    "BELGIUM VS IRAN": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-21",
+        "hora": "12:00 UTC-7"
+    },
+    "NEW ZEALAND VS EGYPT": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-21",
+        "hora": "18:00 UTC-7"
+    },
+    "EGYPT VS IRAN": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-26",
+        "hora": "20:00 UTC-7"
+    },
+    "NEW ZEALAND VS BELGIUM": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-26",
+        "hora": "20:00 UTC-7"
+    },
+    "SPAIN VS CAPE VERDE": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-15",
+        "hora": "12:00 UTC-4"
+    },
+    "SAUDI ARABIA VS URUGUAY": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-15",
+        "hora": "18:00 UTC-4"
+    },
+    "SPAIN VS SAUDI ARABIA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-21",
+        "hora": "12:00 UTC-4"
+    },
+    "URUGUAY VS CAPE VERDE": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-21",
+        "hora": "18:00 UTC-4"
+    },
+    "CAPE VERDE VS SAUDI ARABIA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-26",
+        "hora": "19:00 UTC-5"
+    },
+    "URUGUAY VS SPAIN": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-26",
+        "hora": "18:00 UTC-6"
+    },
+    "FRANCE VS SENEGAL": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-16",
+        "hora": "15:00 UTC-4"
+    },
+    "IRAQ VS NORWAY": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-16",
+        "hora": "18:00 UTC-4"
+    },
+    "FRANCE VS IRAQ": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-22",
+        "hora": "17:00 UTC-4"
+    },
+    "NORWAY VS SENEGAL": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-22",
+        "hora": "20:00 UTC-4"
+    },
+    "NORWAY VS FRANCE": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-26",
+        "hora": "15:00 UTC-4"
+    },
+    "SENEGAL VS IRAQ": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-26",
+        "hora": "15:00 UTC-4"
+    },
+    "ARGENTINA VS ALGERIA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-16",
+        "hora": "20:00 UTC-5"
+    },
+    "AUSTRIA VS JORDAN": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-16",
+        "hora": "21:00 UTC-7"
+    },
+    "ARGENTINA VS AUSTRIA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-22",
+        "hora": "12:00 UTC-5"
+    },
+    "JORDAN VS ALGERIA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-22",
+        "hora": "20:00 UTC-7"
+    },
+    "ALGERIA VS AUSTRIA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-27",
+        "hora": "21:00 UTC-5"
+    },
+    "JORDAN VS ARGENTINA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-27",
+        "hora": "21:00 UTC-5"
+    },
+    "PORTUGAL VS DR CONGO": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-17",
+        "hora": "12:00 UTC-5"
+    },
+    "UZBEKISTAN VS COLOMBIA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-17",
+        "hora": "20:00 UTC-6"
+    },
+    "PORTUGAL VS UZBEKISTAN": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-23",
+        "hora": "12:00 UTC-5"
+    },
+    "COLOMBIA VS DR CONGO": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-23",
+        "hora": "20:00 UTC-6"
+    },
+    "COLOMBIA VS PORTUGAL": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-27",
+        "hora": "19:30 UTC-4"
+    },
+    "DR CONGO VS UZBEKISTAN": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-27",
+        "hora": "19:30 UTC-4"
+    },
+    "ENGLAND VS CROATIA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-17",
+        "hora": "15:00 UTC-5"
+    },
+    "GHANA VS PANAMA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-17",
+        "hora": "19:00 UTC-4"
+    },
+    "ENGLAND VS GHANA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-23",
+        "hora": "16:00 UTC-4"
+    },
+    "PANAMA VS CROATIA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-23",
+        "hora": "19:00 UTC-4"
+    },
+    "PANAMA VS ENGLAND": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-27",
+        "hora": "17:00 UTC-4"
+    },
+    "CROATIA VS GHANA": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-27",
+        "hora": "17:00 UTC-4"
+    },
+    "2A VS 2B": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-28",
+        "hora": "12:00 UTC-7"
+    },
+    "1E VS 3A/B/C/D/F": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-29",
+        "hora": "16:30 UTC-4"
+    },
+    "1F VS 2C": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-29",
+        "hora": "19:00 UTC-6"
+    },
+    "1C VS 2F": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-29",
+        "hora": "12:00 UTC-5"
+    },
+    "1I VS 3C/D/F/G/H": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-30",
+        "hora": "17:00 UTC-4"
+    },
+    "2E VS 2I": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-30",
+        "hora": "12:00 UTC-5"
+    },
+    "1A VS 3C/E/F/H/I": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-06-30",
+        "hora": "19:00 UTC-6"
+    },
+    "1L VS 3E/H/I/J/K": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-01",
+        "hora": "12:00 UTC-4"
+    },
+    "1D VS 3B/E/F/I/J": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-01",
+        "hora": "17:00 UTC-7"
+    },
+    "1G VS 3A/E/H/I/J": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-01",
+        "hora": "13:00 UTC-7"
+    },
+    "2K VS 2L": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-02",
+        "hora": "19:00 UTC-4"
+    },
+    "1H VS 2J": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-02",
+        "hora": "12:00 UTC-7"
+    },
+    "1B VS 3E/F/G/I/J": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-02",
+        "hora": "20:00 UTC-7"
+    },
+    "1J VS 2H": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-03",
+        "hora": "18:00 UTC-4"
+    },
+    "1K VS 3D/E/I/J/L": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-03",
+        "hora": "20:30 UTC-5"
+    },
+    "2D VS 2G": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-03",
+        "hora": "13:00 UTC-5"
+    },
+    "W74 VS W77": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-04",
+        "hora": "17:00 UTC-4"
+    },
+    "W73 VS W75": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-04",
+        "hora": "12:00 UTC-5"
+    },
+    "W76 VS W78": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-05",
+        "hora": "16:00 UTC-4"
+    },
+    "W79 VS W80": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-05",
+        "hora": "18:00 UTC-6"
+    },
+    "W83 VS W84": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-06",
+        "hora": "14:00 UTC-5"
+    },
+    "W81 VS W82": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-06",
+        "hora": "17:00 UTC-7"
+    },
+    "W86 VS W88": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-07",
+        "hora": "12:00 UTC-4"
+    },
+    "W85 VS W87": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-07",
+        "hora": "13:00 UTC-7"
+    },
+    "W89 VS W90": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-09",
+        "hora": "16:00 UTC-4"
+    },
+    "W93 VS W94": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-10",
+        "hora": "12:00 UTC-7"
+    },
+    "W91 VS W92": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-11",
+        "hora": "17:00 UTC-4"
+    },
+    "W95 VS W96": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-11",
+        "hora": "20:00 UTC-5"
+    },
+    "W97 VS W98": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-14",
+        "hora": "14:00 UTC-5"
+    },
+    "W99 VS W100": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-15",
+        "hora": "15:00 UTC-4"
+    },
+    "L101 VS L102": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-18",
+        "hora": "17:00 UTC-4"
+    },
+    "W101 VS W102": {
+        "gl": null,
+        "gv": null,
+        "fecha": "2026-07-19",
+        "hora": "15:00 UTC-4"
+    }
+}

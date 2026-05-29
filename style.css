@@ -1,0 +1,328 @@
+/* ==========================================
+   1. RESETEO Y ESTILOS BASE
+   ========================================== */
+body {
+  margin: 0; 
+  padding: 0;
+  width: 100vw; 
+  height: 100vh;
+  overflow: hidden; 
+  background-image: url('background.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  touch-action: manipulation; 
+}
+
+/* ==========================================
+   2. FASE DE GRUPOS
+   ========================================== */
+.fase-grupos {
+  display: flex; 
+  justify-content: space-between;
+  padding: 2vh 40px; 
+  max-width: 1300px;
+  margin: 0 auto; 
+  height: 100%; 
+  box-sizing: border-box;
+  align-items: center; 
+}
+
+.columna { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1vh; 
+  width: 250px; 
+}
+
+.tarjeta-grupo {
+  display: flex; 
+  background-color: rgba(0, 0, 0, 0.7); 
+  border-radius: 8px; 
+  border: 2px solid var(--color-grupo);
+  overflow: hidden; 
+  backdrop-filter: blur(5px); 
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.5s ease-out;
+  cursor: pointer; 
+}
+
+.tarjeta-grupo:hover { transform: scale(1.02); }
+.tarjeta-grupo.sale-izquierda { transform: translateX(-150%) scale(0.8); opacity: 0; }
+.tarjeta-grupo.sale-derecha { transform: translateX(150%) scale(0.8); opacity: 0; }
+
+.letra-grupo { 
+  background-color: var(--color-grupo); 
+  color: black; 
+  font-size: 24px; 
+  font-weight: 900; 
+  width: 40px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.lista-equipos { 
+  flex-grow: 1; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.equipo { 
+  padding: 5px 8px; 
+  font-size: 11px; 
+  font-weight: bold; 
+  display: flex; 
+  align-items: center; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+.equipo:last-child { border-bottom: none; }
+
+/* ==========================================
+   3. FASE DE LLAVES (Estructura Base)
+   ========================================== */
+.fase-llaves {
+  display: flex; 
+  justify-content: space-between;
+  padding: 8vh 20px 4vh 20px; 
+  height: 100%; 
+  box-sizing: border-box;
+  align-items: stretch;
+  position: relative; 
+}
+
+.lado-llaves {
+  display: flex;
+  width: 42%;
+  justify-content: space-between;
+}
+
+.izquierdo { justify-content: flex-start; }
+.derecho { justify-content: flex-end; }
+
+.columna-fase {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; 
+  height: 100%; 
+  gap: 5px;
+}
+
+.col-16vos, .col-octavos, .col-cuartos, .col-semis { width: 185px; }
+
+.columna-central {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16%;
+  justify-content: flex-end; 
+  padding-bottom: 20px;
+}
+
+/* ==========================================
+   4. DISEÑO DE LAS TARJETAS DE PARTIDO
+   ========================================== */
+.tarjeta-partido {
+  display: flex; 
+  background-color: rgba(10, 15, 25, 0.85);
+  border-radius: 6px; 
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px); 
+  border: 1px solid rgba(255,255,255,0.1);
+  position: relative; 
+  z-index: 1;         
+}
+
+.origen-cruce {
+  background-color: var(--color-partido); 
+  color: #000;
+  font-weight: 900; 
+  font-size: 10px; 
+  width: 38px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap; 
+}
+
+.detalle-partido { flex-grow: 1; display: flex; flex-direction: column; }
+
+.fecha-hora { 
+  font-size: 9px; font-weight: bold; color: #a0aab5; padding: 3px; 
+  text-align: center; background-color: rgba(255, 255, 255, 0.05); 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); letter-spacing: 1px; 
+}
+
+.equipo-llave { 
+  padding: 4px 6px; font-size: 10px; font-weight: bold; 
+  display: flex; align-items: center; white-space: nowrap; 
+}
+.equipo-llave:first-of-type { border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+
+.icono-bandera {
+  width: 16px; height: 11px; object-fit: cover;
+  border-radius: 2px; margin-right: 8px; box-shadow: 0 0 3px rgba(0,0,0,0.8);
+}
+
+.nombre-pais {
+  display: inline-block; max-width: 95px; overflow: hidden;
+  text-overflow: ellipsis; white-space: nowrap; vertical-align: middle;
+}
+
+.equipo-llave .goles {
+  margin-left: auto; background: rgba(255,255,255,0.1);
+  padding: 2px 6px; border-radius: 3px; color: #fff;
+}
+
+.origen-pendiente { color: rgba(255,255,255,0.3); font-style: italic; }
+
+.derecho .tarjeta-partido, .derecho .equipo-llave { flex-direction: row-reverse; }
+.derecho .icono-bandera { margin-right: 0; margin-left: 8px; }
+.derecho .equipo-llave .goles { margin-left: 0; margin-right: auto; }
+
+/* ==========================================
+   5. VENTANA MODAL
+   ========================================== */
+.modal {
+  display: none; position: fixed; z-index: 3000; left: 0; top: 0;
+  width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px); align-items: center; justify-content: center; 
+}
+.modal-contenido {
+  background-color: #0f1620; border: 1px solid #1e2b3c; border-radius: 8px;
+  width: 550px; max-width: 90vw; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+.cerrar-modal { float: right; color: #666; font-size: 28px; font-weight: bold; cursor: pointer; margin-top: -10px; }
+.cerrar-modal:hover { color: white; }
+.modal-cabecera { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.modal-cabecera h2 { color: #eab308; margin: 0; font-size: 24px; }
+.modal-subtitulo { color: #64748b; font-size: 12px; letter-spacing: 1px; }
+.tabla-posiciones { width: 100%; border-collapse: collapse; text-align: center; font-size: 14px; }
+.tabla-posiciones th { color: #64748b; font-weight: normal; padding-bottom: 12px; border-bottom: 1px solid #1e2b3c; font-size: 12px; }
+.tabla-posiciones td { padding: 12px 0; border-bottom: 1px solid #1e2b3c; color: white; }
+.tabla-posiciones .col-equipo { text-align: left; display: flex; align-items: center; gap: 10px; font-weight: bold; }
+.tabla-posiciones .destacado { color: #eab308; font-weight: bold; }
+.pos-circulo { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; font-size: 11px; font-weight: bold; }
+.pos-1 { background-color: #eab308; color: black; }
+.pos-2 { background-color: #3b82f6; color: white; }
+.pos-resto { background-color: #334155; color: white; }
+.separador-modal { border: 0; height: 1px; background-color: #1e2b3c; margin: 25px 0; }
+.modal-carga-partidos h3 { color: white; font-size: 14px; text-align: center; margin-bottom: 15px; }
+.fila-carga-partido { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 12px; }
+.equipo-carga { display: flex; align-items: center; width: 120px; font-size: 13px; font-weight: bold; }
+.equipo-carga.derecha { justify-content: flex-end; gap: 8px; }
+.equipo-carga.izquierda { justify-content: flex-start; gap: 8px; }
+.input-goles { width: 35px; height: 30px; background-color: #0b0e14; border: 1px solid #334155; color: white; border-radius: 4px; text-align: center; font-size: 16px; font-weight: bold; }
+.input-goles::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.btn-guardar { width: 100%; padding: 12px; margin-top: 15px; background-color: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+.btn-guardar:hover { background-color: #2563eb; }
+
+/* ==========================================
+   6. BOTONES FLOTANTES DE NAVEGACIÓN
+   ========================================== */
+.btn-flotante {
+  position: fixed; padding: 12px 24px; background-color: rgba(15, 22, 32, 0.95);
+  color: white; font-weight: bold; font-size: 13px; letter-spacing: 1px;
+  border: 1px solid #3b82f6; border-radius: 30px; cursor: pointer;
+  backdrop-filter: blur(5px); z-index: 2000; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+  transition: all 0.5s ease; 
+}
+#btn-volver-grupos { top: 20px; left: 50%; transform: translateX(-50%); opacity: 0; }
+#btn-volver-grupos:hover { transform: translateX(-50%) scale(1.05); background-color: #3b82f6; }
+#btn-ir-llaves { top: 20px; left: 50%; transform: translateX(-50%); }
+#btn-ir-llaves:hover { transform: translateX(-50%) scale(1.05); background-color: #3b82f6; }
+
+
+/* ==========================================
+   7. ARREGLO DE LLAVES: CELULARES (DISEÑO BASE MÓVIL)
+   ========================================== */
+.fase-llaves {
+  justify-content: flex-start; overflow-x: auto; overflow-y: hidden; 
+  padding: 80px 20px 60px 20px; align-items: stretch; height: 100vh; position: relative; 
+}
+.lado-llaves {
+  display: flex; width: 780px !important; min-width: 780px !important; 
+  height: 100% !important; flex-shrink: 0; justify-content: space-between !important; 
+}
+.columna-fase {
+  display: flex; flex-direction: column; width: 175px !important;
+  min-width: 175px !important; height: 100% !important; flex-shrink: 0; 
+  justify-content: space-around !important; 
+}
+.columna-central {
+  display: flex; flex-direction: column; width: 60px !important; 
+  min-width: 60px !important; height: 100% !important; flex-shrink: 0; 
+  align-items: center !important; 
+}
+.columna-central .tarjeta-partido {
+  width: 180px !important; min-width: 180px !important; height: auto !important; 
+  max-height: 65px !important; margin-top: auto !important; margin-bottom: 225px !important; z-index: 10;
+}
+#svg-conectores {
+  position: absolute; top: 80px; left: 20px; width: 1620px !important; 
+  height: calc(100% - 100px) !important; min-width: 1620px !important; z-index: 0;
+}
+.tarjeta-partido { min-height: auto; }
+.fecha-hora { padding: 2px; font-size: 8px; }
+.equipo-llave { padding: 3px 6px; }
+
+/* ==========================================
+   8. MEDIA QUERIES - EXCLUSIVO PARA MÓVILES (Overrides)
+   ========================================== */
+@media (max-width: 900px) {
+  /* Grupos a 2 columnas */
+  .fase-grupos { flex-direction: row; justify-content: space-between; overflow-y: auto; padding: 20px 10px 70px 10px; gap: 8px; }
+  .columna { width: 49%; margin: 0; }
+  .columna.central { display: none; }
+  .tarjeta-grupo { margin-bottom: 8px; }
+  .equipo { font-size: 9px; padding: 4px 5px; }
+  .nombre-pais { max-width: 60px; }
+  .letra-grupo { width: 30px; font-size: 18px; }
+  
+  /* Ajuste de Modal en Celulares */
+  .modal-contenido { width: 95%; padding: 15px; max-height: 90vh; overflow-y: auto; }
+  .equipo-carga { width: 90px; font-size: 11px; }
+}
+
+/* ==========================================
+   9. MEDIA QUERIES - EXCLUSIVO PARA PC (ESCRITORIO)
+   ========================================== */
+@media (min-width: 801px) {
+  .fase-llaves {
+    height: 100vh !important; padding: 60px 40px 20px 40px !important; 
+    box-sizing: border-box !important; overflow: hidden !important; 
+    justify-content: center !important; gap: 30px !important; 
+  }
+  
+  .lado-llaves {
+    width: auto !important; min-width: auto !important;
+    flex: 1 !important; height: 100% !important; justify-content: space-between !important; 
+  }
+  
+  .columna-fase {
+    width: 190px !important; min-width: 190px !important; height: 100% !important; 
+    justify-content: space-around !important; /* <-- ESTA ES LA MAGIA MATEMÁTICA */
+  }
+  
+  /* --- ACÁ ESTÁ LA CORRECCIÓN DE LA FINAL --- */
+  .columna-central {
+    width: 160px !important; 
+    min-width: 160px !important; 
+    height: 100% !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    padding-bottom: 0 !important; /* Limpiamos el colchón viejo */
+  }
+  
+  .columna-central .tarjeta-partido { 
+    width: 100% !important; 
+    min-width: 100% !important; 
+    margin-top: auto !important; /* EL YUNQUE: Obliga a la tarjeta a irse al piso de la pantalla */
+    margin-bottom: 275px !important; /* LA DISTANCIA A LA BASE: Ajustá este número si la querés más arriba o más abajo */
+  }
+
+  #svg-conectores { top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; min-width: auto !important;}
+}

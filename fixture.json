@@ -1,0 +1,49 @@
+{
+  "torneo": "FIFA World Cup 2026",
+  "fases": {
+    "16vos": [
+      { "id": "P1", "fecha": "11 JUN", "hora": "16:00 hs", "equipo_local": { "origen": "1A", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "2B", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P2", "fecha": "12 JUN", "hora": "19:00 hs", "equipo_local": { "origen": "1C", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "2D", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P3", "fecha": "13 JUN", "hora": "15:00 hs", "equipo_local": { "origen": "1E", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "2F", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P4", "fecha": "14 JUN", "hora": "20:00 hs", "equipo_local": { "origen": "1G", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "2H", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P5", "fecha": "15 JUN", "hora": "16:00 hs", "equipo_local": { "origen": "1I", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "2J", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P6", "fecha": "16 JUN", "hora": "18:00 hs", "equipo_local": { "origen": "1K", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "2L", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P7", "fecha": "17 JUN", "hora": "21:00 hs", "equipo_local": { "origen": "1A", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "3B", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P8", "fecha": "18 JUN", "hora": "15:00 hs", "equipo_local": { "origen": "1C", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "3D", "nombre": null, "codigo": null, "goles": null } },
+      
+      { "id": "P9", "fecha": "11 JUN", "hora": "18:00 hs", "equipo_local": { "origen": "1B", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "2A", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P10", "fecha": "12 JUN", "hora": "21:00 hs", "equipo_local": { "origen": "1D", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "2C", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P11", "fecha": "13 JUN", "hora": "17:00 hs", "equipo_local": { "origen": "1F", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "2E", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P12", "fecha": "14 JUN", "hora": "16:00 hs", "equipo_local": { "origen": "1H", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "2G", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P13", "fecha": "15 JUN", "hora": "21:00 hs", "equipo_local": { "origen": "1J", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "2I", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P14", "fecha": "16 JUN", "hora": "15:00 hs", "equipo_local": { "origen": "1L", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "2K", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P15", "fecha": "17 JUN", "hora": "18:00 hs", "equipo_local": { "origen": "1B", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "3A", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "P16", "fecha": "18 JUN", "hora": "21:00 hs", "equipo_local": { "origen": "1D", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "3C", "nombre": null, "codigo": null, "goles": null } }
+    ],
+    "octavos": [
+      { "id": "O1", "fecha": "28 JUN", "hora": "17:00 hs", "equipo_local": { "origen": "Gan P1", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan P2", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "O2", "fecha": "29 JUN", "hora": "21:00 hs", "equipo_local": { "origen": "Gan P3", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan P4", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "O3", "fecha": "30 JUN", "hora": "17:00 hs", "equipo_local": { "origen": "Gan P5", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan P6", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "O4", "fecha": "01 JUL", "hora": "21:00 hs", "equipo_local": { "origen": "Gan P7", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan P8", "nombre": null, "codigo": null, "goles": null } },
+      
+      { "id": "O5", "fecha": "28 JUN", "hora": "13:00 hs", "equipo_local": { "origen": "Gan P9", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan P10", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "O6", "fecha": "29 JUN", "hora": "17:00 hs", "equipo_local": { "origen": "Gan P11", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan P12", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "O7", "fecha": "30 JUN", "hora": "13:00 hs", "equipo_local": { "origen": "Gan P13", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan P14", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "O8", "fecha": "01 JUL", "hora": "17:00 hs", "equipo_local": { "origen": "Gan P15", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan P16", "nombre": null, "codigo": null, "goles": null } }
+    ],
+    "cuartos": [
+      { "id": "C1", "fecha": "03 JUL", "hora": "15:00 hs", "equipo_local": { "origen": "Gan O1", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan O2", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "C2", "fecha": "04 JUL", "hora": "18:00 hs", "equipo_local": { "origen": "Gan O3", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan O4", "nombre": null, "codigo": null, "goles": null } },
+      
+      { "id": "C3", "fecha": "03 JUL", "hora": "11:00 hs", "equipo_local": { "origen": "Gan O5", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan O6", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "C4", "fecha": "04 JUL", "hora": "15:00 hs", "equipo_local": { "origen": "Gan O7", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan O8", "nombre": null, "codigo": null, "goles": null } }
+    ],
+    "semis": [
+      { "id": "S1", "fecha": "07 JUL", "hora": "21:00 hs", "equipo_local": { "origen": "Gan C1", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan C2", "nombre": null, "codigo": null, "goles": null } },
+      { "id": "S2", "fecha": "08 JUL", "hora": "21:00 hs", "equipo_local": { "origen": "Gan C3", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan C4", "nombre": null, "codigo": null, "goles": null } }
+    ],
+    "final": [
+      { "id": "F1", "fecha": "12 JUL", "hora": "16:00 hs", "equipo_local": { "origen": "Gan S1", "nombre": null, "codigo": null, "goles": null }, "equipo_visitante": { "origen": "Gan S2", "nombre": null, "codigo": null, "goles": null } }
+    ]
+  }
+}
