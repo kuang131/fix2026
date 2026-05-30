@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Fixture Mundial 2026</title>
-    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
@@ -139,8 +139,28 @@
         <div class="columna-fase col-semis" id="izq-semis"></div>
       </div>
 
-      <div class="columna-central">
-        <div class="columna-fase col-final" id="centro-final"></div>
+		<div class="columna-central">
+        
+        <div id="podio-campeones" style="display: none; flex-direction: column; align-items: center; text-align: center; margin-bottom: 30px; position: relative; z-index: 20;">
+            <div class="fuegos-artificiales"></div>
+            <div class="titulo-campeon" style="color: #fbbf24; font-size: 16px; font-weight: 900; letter-spacing: 2px; margin-bottom: 15px; animation: latido-oro 2s infinite;">🏆 CAMPEÓN DEL MUNDO 🏆</div>
+            
+            <div id="campeon-info" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 20px;">
+                <img id="campeon-bandera" src="" style="width: 100px; height: 65px; object-fit: cover; border-radius: 6px; box-shadow: 0 0 25px rgba(251, 191, 36, 0.7); margin-bottom: 10px;">
+                <span id="campeon-nombre" style="font-size: 28px; font-weight: 900; color: white; text-shadow: 0px 3px 6px rgba(0,0,0,0.9); letter-spacing: 1px;"></span>
+            </div>
+            
+            <div id="subcampeones-info" style="display: flex; flex-direction: column; gap: 8px; font-size: 12px; font-weight: bold; color: #cbd5e1; background: rgba(0,0,0,0.75); padding: 12px 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(5px);">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span style="color: silver;">🥈 2do:</span> <img id="segundo-bandera" src="" style="width: 20px; height: 14px; border-radius: 2px;"> <span id="segundo-nombre" style="color: white;"></span>
+                </div>
+                <div id="tercero-info" style="display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    </div>
+            </div>
+        </div>
+
+		<div class="columna-fase col-final" id="centro-final"></div>
+        <div id="centro-tercer-puesto" style="margin-top: 30px; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10;"></div>
       </div>
 
       <div class="lado-llaves derecho">
@@ -198,7 +218,8 @@
         <div id="contenedor-carga-llave">
           </div>
         
-        <button class="btn-guardar" id="btn-guardar-llave">GUARDAR Y AVANZAR GANADOR</button>
+		<button class="btn-guardar" id="btn-guardar-llave">GUARDAR Y AVANZAR GANADOR</button>
+        <button class="btn-guardar" id="btn-reset-llave" style="background-color: #ef4444; margin-top: 10px; display: none;">&#128465; BORRAR RESULTADO</button>
       </div>
     </div>
 

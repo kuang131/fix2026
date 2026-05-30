@@ -67,12 +67,85 @@ function armarEstructuraLlaves() {
         if(contenedorDer) contenedorDer.innerHTML = htmlDerecha;
     });
 
-    const contenedorFinal = document.getElementById('centro-final');
-    const partidoFinal = datosFixture.fases["final"];
-    
-    if (contenedorFinal && partidoFinal && partidoFinal.length > 0) {
-        contenedorFinal.innerHTML = crearTarjetaPartido(partidoFinal[0]);
+// === INYECTOR: PARTIDO POR EL 3ER PUESTO ===
+    const contenedorTercero = document.getElementById('centro-tercer-puesto');
+    if (contenedorTercero) {
+        const semis = datosFixture.fases["semis"];
+        let eq1 = { nombre: "", codigo: null, goles: null };
+        let eq2 = { nombre: "", codigo: null, goles: null };
+
+        // Si se jugaron las semis, pescamos a los dos perdedores
+        if (semis && semis.length === 2 && semis[0].equipo_local.goles !== null && semis[1].equipo_local.goles !== null) {
+            eq1 = (semis[0].equipo_local.goles > semis[0].equipo_visitante.goles || semis[0].equipo_local.penales > semis[0].equipo_visitante.penales) ? semis[0].equipo_visitante : semis[0].equipo_local;
+            eq2 = (semis[1].equipo_local.goles > semis[1].equipo_visitante.goles || semis[1].equipo_local.penales > semis[1].equipo_visitante.penales) ? semis[1].equipo_visitante : semis[1].equipo_local;
+        }
+
+        // Lo creamos o actualizamos
+        if (!datosFixture.fases["tercero"]) {
+            datosFixture.fases["tercero"] = [{ id: "partido-tercero", equipo_local: { ...eq1 }, equipo_visitante: { ...eq2 }, fecha: "18 Jul", hora: "17:00 hs" }];
+        } else {
+            const part = datosFixture.fases["tercero"][0];
+            // Si el usuario modificó las semis, reseteamos este partido
+            if (part.equipo_local.codigo !== eq1.codigo || part.equipo_visitante.codigo !== eq2.codigo) {
+                part.equipo_local = { ...eq1, goles: null };
+                part.equipo_visitante = { ...eq2, goles: null };
+            }
+        }
+        
+        // Lo imprimimos en pantalla
+        if (eq1.codigo && eq2.codigo) {
+            contenedorTercero.innerHTML = `<div style="color:#cd7f32; font-size:12px; font-weight:bold; margin-bottom:5px; text-shadow: 0 1px 2px rgba(0,0,0,0.8); letter-spacing: 1px;">🥉 3ER PUESTO</div>` + crearTarjetaPartido(datosFixture.fases["tercero"][0]);
+        } else {
+            contenedorTercero.innerHTML = '';
+        }
     }
+
+    actualizarPodio();
+} // <-- FIN DE armarEstructuraLlaves()
+
+function actualizarPodio() {
+    const podio = document.getElementById('podio-campeones');
+    if (!podio) return;
+
+    const finalMatch = datosFixture.fases["final"][0];
+    
+    if (!finalMatch || finalMatch.equipo_local.goles === null || finalMatch.equipo_visitante.goles === null || !finalMatch.equipo_local.codigo || !finalMatch.equipo_visitante.codigo) {
+        podio.style.display = 'none';
+        return;
+    }
+
+    let campeon, subcampeon;
+    const eqL = finalMatch.equipo_local;
+    const eqV = finalMatch.equipo_visitante;
+
+    if (eqL.goles > eqV.goles || (eqL.penales > eqV.penales)) {
+        campeon = eqL; subcampeon = eqV;
+    } else {
+        campeon = eqV; subcampeon = eqL;
+    }
+
+    document.getElementById('campeon-bandera').src = `banderas/${campeon.codigo}.png`;
+    document.getElementById('campeon-nombre').innerText = campeon.nombre;
+    document.getElementById('segundo-bandera').src = `banderas/${subcampeon.codigo}.png`;
+    document.getElementById('segundo-nombre').innerText = subcampeon.nombre;
+
+    // AHORA BUSCAMOS AL VERDADERO GANADOR DEL BRONCE
+    const partidoTercero = datosFixture.fases["tercero"] ? datosFixture.fases["tercero"][0] : null;
+    let terceroReal = null;
+    
+    if (partidoTercero && partidoTercero.equipo_local.goles !== null && partidoTercero.equipo_visitante.goles !== null) {
+        terceroReal = (partidoTercero.equipo_local.goles > partidoTercero.equipo_visitante.goles || partidoTercero.equipo_local.penales > partidoTercero.equipo_visitante.penales) ? partidoTercero.equipo_local : partidoTercero.equipo_visitante;
+    }
+
+    const divTercero = document.getElementById('tercero-info');
+    if (terceroReal && terceroReal.codigo) {
+        divTercero.innerHTML = `<span style="color: #cd7f32;">🥉 3ro:</span> <img src="banderas/${terceroReal.codigo}.png" style="width: 20px; height: 14px; border-radius: 2px;"> <span style="color: white;">${terceroReal.nombre}</span>`;
+        divTercero.style.display = 'flex';
+    } else {
+        divTercero.style.display = 'none'; // Si no jugaron, ocultamos el 3er puesto del podio
+    }
+
+    podio.style.display = 'flex';
 }
 
 function crearTarjetaPartido(partido) {
@@ -375,10 +448,11 @@ window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; 
 const modalPartido = document.getElementById('modal-partido');
 const btnCerrarPartido = document.getElementById('btn-cerrar-partido');
 const btnGuardarLlave = document.getElementById('btn-guardar-llave');
+const btnResetLlave = document.getElementById('btn-reset-llave'); // <-- NUEVO BOTÓN
 let partidoEditando = null;
 
 document.body.addEventListener('click', (e) => {
-    const tarjeta = e.target.closest('.tarjeta-partido'); // <-- CORRECCIÓN: Clase correcta
+    const tarjeta = e.target.closest('.tarjeta-partido'); 
     if (tarjeta && document.getElementById('pantalla-llaves').style.display === 'flex') {
         const idPartido = tarjeta.getAttribute('data-id');
         abrirModalLlave(idPartido);
@@ -387,7 +461,7 @@ document.body.addEventListener('click', (e) => {
 
 function abrirModalLlave(idPartido) {
     for (const fase in datosFixture.fases) {
-        if (["16vos", "octavos", "cuartos", "semis", "final"].includes(fase)) {
+		if (["16vos", "octavos", "cuartos", "semis", "final", "tercero"].includes(fase)) {
             const encontrado = datosFixture.fases[fase].find(p => p.id === idPartido);
             if (encontrado) {
                 partidoEditando = encontrado;
@@ -405,6 +479,11 @@ function abrirModalLlave(idPartido) {
     const mostrarPenales = (eqL.goles !== null && eqL.goles === eqV.goles) ? 'flex' : 'none';
     const pl = (eqL.penales !== undefined && eqL.penales !== null) ? eqL.penales : '';
     const pv = (eqV.penales !== undefined && eqV.penales !== null) ? eqV.penales : '';
+
+    // Solo mostramos el botón rojo de la basurita si el partido ya tenía un resultado previo
+    if (btnResetLlave) {
+        btnResetLlave.style.display = (eqL.goles !== null && eqV.goles !== null) ? 'block' : 'none';
+    }
 
     cont.innerHTML = `
         <div class="fila-carga-partido" style="margin: 20px 0; align-items: center;">
@@ -505,6 +584,61 @@ if(btnGuardarLlave) {
             });
         }
 
+        localStorage.setItem('fixture_llaves', JSON.stringify(datosFixture));
+        modalPartido.style.display = 'none';
+        armarEstructuraLlaves();
+        setTimeout(dibujarConectores, 50);
+    });
+}
+
+// --- NUEVO SISTEMA DE BORRADO EN CASCADA ---
+if(btnResetLlave) {
+    btnResetLlave.addEventListener('click', () => {
+        if (!confirm('¿Borrar este resultado? El equipo también se borrará de los siguientes partidos.')) return;
+
+        // 1. Vaciamos las cajas de goles del partido actual
+        partidoEditando.equipo_local.goles = null;
+        partidoEditando.equipo_visitante.goles = null;
+        delete partidoEditando.equipo_local.penales;
+        delete partidoEditando.equipo_visitante.penales;
+
+        // 2. Función cazafantasmas: Persigue al equipo eliminado por las siguientes fases
+        function limpiarCascada(idPartido) {
+            const identificadorGanador = `Gan ${idPartido}`;
+            for (const fase in datosFixture.fases) {
+                datosFixture.fases[fase].forEach(p => {
+                    let fueModificado = false;
+                    
+                    if (p.equipo_local.origen === identificadorGanador) {
+                        p.equipo_local.nombre = '';
+                        p.equipo_local.codigo = null;
+                        p.equipo_local.goles = null;
+                        delete p.equipo_local.penales;
+                        fueModificado = true;
+                    }
+                    if (p.equipo_visitante.origen === identificadorGanador) {
+                        p.equipo_visitante.nombre = '';
+                        p.equipo_visitante.codigo = null;
+                        p.equipo_visitante.goles = null;
+                        delete p.equipo_visitante.penales;
+                        fueModificado = true;
+                    }
+                    
+                    // Si el equipo ya había jugado OTRO partido más adelante, lo limpiamos también
+                    if (fueModificado) {
+                        p.equipo_local.goles = null; 
+                        p.equipo_visitante.goles = null;
+                        delete p.equipo_local.penales;
+                        delete p.equipo_visitante.penales;
+                        limpiarCascada(p.id);
+                    }
+                });
+            }
+        }
+
+        limpiarCascada(partidoEditando.id);
+
+        // 3. Guardamos los cambios y repintamos la pantalla
         localStorage.setItem('fixture_llaves', JSON.stringify(datosFixture));
         modalPartido.style.display = 'none';
         armarEstructuraLlaves();
@@ -644,6 +778,35 @@ async function sincronizarConNube() {
         if (!res.ok) throw new Error("No se pudo cargar el archivo");
         
         const datosNube = await res.json();
+
+        // --- Función auxiliar para calcular zonas horarias ---
+        function formatearFechaNube(fechaStr, horaStr) {
+            const matchHora = horaStr.match(/(\d{2}):(\d{2})\s*UTC([+-]?\d*)/i);
+            if (!matchHora) return { fecha: fechaStr, hora: horaStr };
+
+            const [anio, mes, dia] = fechaStr.split('-').map(Number);
+            const horaRemota = parseInt(matchHora[1]);
+            const minuto = parseInt(matchHora[2]);
+            const offsetRemoto = matchHora[3] ? parseInt(matchHora[3]) : 0;
+            
+            let horaUTC = horaRemota - offsetRemoto;
+            let horaArg = horaUTC - 3;
+            
+            let fechaObj = new Date(anio, mes - 1, dia);
+            if (horaArg < 0) { horaArg += 24; fechaObj.setDate(fechaObj.getDate() - 1); } 
+            else if (horaArg >= 24) { horaArg -= 24; fechaObj.setDate(fechaObj.getDate() + 1); }
+            
+            const diaFormat = fechaObj.getDate().toString().padStart(2, '0');
+            const meses = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+            return {
+                fecha: `${diaFormat} ${meses[fechaObj.getMonth()]}`,
+                hora: `${horaArg.toString().padStart(2, '0')}:${minuto.toString().padStart(2, '0')} hs`
+            };
+        }
+
+        // ====================================================
+        // FASE 1: SINCRONIZAR GRUPOS
+        // ====================================================
         const tarjetas = document.querySelectorAll('.tarjeta-grupo');
 
         tarjetas.forEach(tarjeta => {
@@ -651,14 +814,12 @@ async function sincronizarConNube() {
             const divEquipos = tarjeta.querySelectorAll('.equipo');
             let equipos = [];
 
-            // EXTRACTOR BLINDADO: Ignora imágenes y agarra solo el texto puro
             divEquipos.forEach(div => {
                 let textoPuro = div.lastChild.nodeValue; 
                 if(!textoPuro) textoPuro = div.innerText; 
                 equipos.push(textoPuro.trim().toUpperCase());
             });
 
-            // EL MARTILLAZO: Borramos la memoria vieja de este grupo para obligarlo a guardar lo nuevo
             localStorage.removeItem(`grupo_${letra}`);
 
             let partidosGrupo = [
@@ -676,60 +837,117 @@ async function sincronizarConNube() {
                 const clave1 = `${eqL} VS ${eqV}`;
                 const clave2 = `${eqV} VS ${eqL}`;
                 
-                let data = datosNube[clave1];
-                let invertido = false;
-                
-                if (!data && datosNube[clave2]) {
-                    data = datosNube[clave2];
-                    invertido = true;
-                }
+                let data = datosNube[clave1] || datosNube[clave2];
+                let invertido = !datosNube[clave1] && datosNube[clave2];
 
                 if (data && data.fecha && data.hora) {
-                    const matchHora = data.hora.match(/(\d{2}):(\d{2})\s*UTC([+-]?\d*)/i);
-                    
-                    if (matchHora) {
-                        const [anio, mes, dia] = data.fecha.split('-').map(Number);
-                        const horaRemota = parseInt(matchHora[1]);
-                        const minuto = parseInt(matchHora[2]);
-                        const offsetRemoto = matchHora[3] ? parseInt(matchHora[3]) : 0;
-                        
-                        let horaUTC = horaRemota - offsetRemoto;
-                        let horaArg = horaUTC - 3;
-                        
-                        let fechaObj = new Date(anio, mes - 1, dia);
-                        if (horaArg < 0) {
-                            horaArg += 24;
-                            fechaObj.setDate(fechaObj.getDate() - 1); 
-                        } else if (horaArg >= 24) {
-                            horaArg -= 24;
-                            fechaObj.setDate(fechaObj.getDate() + 1); 
-                        }
-                        
-                        const diaFormat = fechaObj.getDate().toString().padStart(2, '0');
-                        const meses = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
-                        const mesFormat = meses[fechaObj.getMonth()];
-                        
-                        p.fecha = `${diaFormat} ${mesFormat}`;
-                        p.hora = `${horaArg.toString().padStart(2, '0')}:${minuto.toString().padStart(2, '0')} hs`;
-                    } else {
-                        p.fecha = data.fecha;
-                        p.hora = data.hora;
-                    }
+                    const fechH = formatearFechaNube(data.fecha, data.hora);
+                    p.fecha = fechH.fecha;
+                    p.hora = fechH.hora;
 
                     if(data.gl !== null && data.gv !== null) {
                         p.gl = invertido ? data.gv : data.gl;
                         p.gv = invertido ? data.gl : data.gv;
                     }
-                } else {
-                    console.warn(`Cruce no encontrado en el JSON: ${clave1}`);
                 }
             });
             
-            // Guardamos la información limpia
             localStorage.setItem(`grupo_${letra}`, JSON.stringify(partidosGrupo));
         });
 
+        // ====================================================
+        // FASE 2: ACTUALIZAR LOS CRUCES DE 16VOS (EL CEREBRO)
+        // ====================================================
         actualizarLlavesEnVivo();
+
+        // ====================================================
+        // FASE 3: SINCRONIZAR LLAVES (ELIMINACIÓN DIRECTA)
+        // ====================================================
+        // Mapeamos el orden exacto de los partidos para cruzar tu JSON con el HTML
+		const mapaLlavesNube = {
+            "16vos": [
+                "2A VS 2B", "1E VS 3A/B/C/D/F", "1F VS 2C", "1C VS 2F", 
+                "1I VS 3C/D/F/G/H", "2E VS 2I", "1A VS 3C/E/F/H/I", "1L VS 3E/H/I/J/K", 
+                "1D VS 3B/E/F/I/J", "1G VS 3A/E/H/I/J", "2K VS 2L", "1H VS 2J", 
+                "1B VS 3E/F/G/I/J", "1J VS 2H", "1K VS 3D/E/I/J/L", "2D VS 2G"
+            ],
+            "octavos": ["W74 VS W77", "W73 VS W75", "W76 VS W78", "W79 VS W80", "W83 VS W84", "W81 VS W82", "W86 VS W88", "W85 VS W87"],
+            "cuartos": ["W89 VS W90", "W93 VS W94", "W91 VS W92", "W95 VS W96"],
+            "semis": ["W97 VS W98", "W99 VS W100"],
+            "final": ["W101 VS W102"],
+            "tercero": ["L101 VS L102"] // <-- ACÁ AGREGAMOS EL CÓDIGO DEL JSON
+        };
+
+        const fasesLlaves = ["16vos", "octavos", "cuartos", "semis", "final", "tercero"];
+        
+        fasesLlaves.forEach(fase => {
+            if (datosFixture.fases[fase]) {
+                datosFixture.fases[fase].forEach((partido, index) => {
+                    const claveNube = mapaLlavesNube[fase][index];
+                    if (!claveNube) return;
+
+                    const data = datosNube[claveNube];
+                    if (data) {
+                        // Siempre pisamos la fecha y hora con la info de la nube
+                        if (data.fecha && data.hora) {
+                            const fechH = formatearFechaNube(data.fecha, data.hora);
+                            partido.fecha = fechH.fecha;
+                            partido.hora = fechH.hora;
+                        }
+
+                        // EL MARTILLAZO: Si hay goles oficiales en la nube, PISAMOS la simulación del usuario
+                        if (data.gl !== null && data.gv !== null) {
+                            partido.equipo_local.goles = data.gl;
+                            partido.equipo_visitante.goles = data.gv;
+                            
+                            // Por si algún día tu API de Python empieza a devolver penales
+                            if (data.pl !== undefined) partido.equipo_local.penales = data.pl;
+                            if (data.pv !== undefined) partido.equipo_visitante.penales = data.pv;
+
+                            let equipoGanador = null;
+                            if (data.gl > data.gv) {
+                                equipoGanador = partido.equipo_local;
+                                delete partido.equipo_local.penales;
+                                delete partido.equipo_visitante.penales;
+                            } else if (data.gv > data.gl) {
+                                equipoGanador = partido.equipo_visitante;
+                                delete partido.equipo_local.penales;
+                                delete partido.equipo_visitante.penales;
+                            } else {
+                                // Empate técnico: Si la nube no mandó penales, respetamos los que el usuario haya cargado a mano para desempatar
+                                if (partido.equipo_local.penales > partido.equipo_visitante.penales) equipoGanador = partido.equipo_local;
+                                else if (partido.equipo_visitante.penales > partido.equipo_local.penales) equipoGanador = partido.equipo_visitante;
+                            }
+
+                            // Avanzamos al ganador automáticamente
+                            if (equipoGanador && equipoGanador.codigo) {
+                                const identificadorGanador = `Gan ${partido.id}`;
+                                for (const f in datosFixture.fases) {
+                                    datosFixture.fases[f].forEach(p => {
+                                        if (p.equipo_local.origen === identificadorGanador) {
+                                            p.equipo_local.nombre = equipoGanador.nombre;
+                                            p.equipo_local.codigo = equipoGanador.codigo;
+                                        }
+                                        if (p.equipo_visitante.origen === identificadorGanador) {
+                                            p.equipo_visitante.nombre = equipoGanador.nombre;
+                                            p.equipo_visitante.codigo = equipoGanador.codigo;
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+        localStorage.setItem('fixture_llaves', JSON.stringify(datosFixture));
+
+        // Refrescamos la pantalla para mostrar los cambios
+        if (document.getElementById('pantalla-llaves').style.display === 'flex') {
+            armarEstructuraLlaves();
+            setTimeout(dibujarConectores, 50);
+        }
 
     } catch (error) {
         console.error("ERROR CRÍTICO LEYENDO EL JSON:", error);

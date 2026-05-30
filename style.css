@@ -326,3 +326,83 @@ body {
 
   #svg-conectores { top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; min-width: auto !important;}
 }
+/* ==========================================
+   10. EFECTOS DEL PODIO Y CAMPEÓN
+   ========================================== */
+@keyframes latido-oro {
+    0% { text-shadow: 0 0 5px #fbbf24, 0 0 10px #fbbf24; transform: scale(1); }
+    50% { text-shadow: 0 0 20px #fbbf24, 0 0 35px #f59e0b; transform: scale(1.05); }
+    100% { text-shadow: 0 0 5px #fbbf24, 0 0 10px #fbbf24; transform: scale(1); }
+}
+
+/* Fiestita de proporciones épicas (x3 área) */
+.fuegos-artificiales {
+    position: absolute;
+    top: 40px; 
+    left: 50%;
+    width: 6px; /* Chispas más grandes */
+    height: 6px;
+    border-radius: 50%;
+    animation: explosion 1.5s infinite ease-out;
+    z-index: -1;
+}
+
+.fuegos-artificiales::before,
+.fuegos-artificiales::after {
+    content: "";
+    position: absolute;
+    width: 6px; 
+    height: 6px;
+    border-radius: 50%;
+    animation: explosion 1.5s infinite ease-out;
+}
+.fuegos-artificiales::before { animation-delay: 0.3s; }
+.fuegos-artificiales::after { animation-delay: 0.6s; }
+
+@keyframes explosion {
+    0% { opacity: 0; box-shadow: 0 0 transparent; }
+    10% { opacity: 1; }
+    100% { 
+        opacity: 0; 
+        /* Explosión expandida a más de 150px de distancia */
+        box-shadow: 
+        -120px -120px #ff004c, 120px -120px #00ff40, 
+        0px -180px #00f7ff, -150px -30px #ffea00, 
+        150px -30px #ff00ea, -90px 120px #ff8800, 
+        90px 120px #002bff, -60px -150px #fff,
+        60px -150px #ff004c, -150px 60px #00ff40,
+        150px 60px #00f7ff, 0px 150px #ffea00; 
+    }
+}
+
+@keyframes explosion {
+    0% { opacity: 0; box-shadow: 0 0 transparent; }
+    10% { opacity: 1; }
+    100% { 
+        opacity: 0; 
+        /* 12 chispas apretadas que no superan los 60px de distancia */
+        box-shadow: 
+        -40px -40px #ff004c, 40px -40px #00ff40, 
+        0px -60px #00f7ff, -50px -10px #ffea00, 
+        50px -10px #ff00ea, -30px 40px #ff8800, 
+        30px 40px #002bff, -20px -50px #fff,
+        20px -50px #ff004c, -50px 20px #00ff40,
+        50px 20px #00f7ff, 0px 50px #ffea00; 
+    }
+}
+
+/* ==========================================
+   11. AJUSTE DE POSICIÓN DEL PODIO
+   ========================================== */
+.columna-central {
+    position: relative !important;
+}
+
+#podio-campeones {
+    position: absolute !important;
+    top: 60px !important; /* <-- BAJAMOS EL PODIO PARA DESPEGARLO DEL BOTÓN */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 350px !important;
+    margin: 0 !important;
+}
